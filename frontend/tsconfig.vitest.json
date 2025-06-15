@@ -1,0 +1,34 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "composite": true,
+    "types": [
+      "node",
+      "@types/jsdom",
+      "@testing-library/jest-dom",
+      "vitest/globals",
+      "vitest/importMeta"
+    ],
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "noEmit": true,
+    "emitDeclarationOnly": false,
+    "sourceMap": true,
+    "allowImportingTsExtensions": false
+  },
+  "include": [
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/**/*.spec.ts",
+    "src/**/*.spec.tsx",
+    "src/**/__tests__/*",
+    "tests/**/*",
+    "vitest.setup.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.stories.tsx",
+    "**/*.story.tsx"
+  ]
+}

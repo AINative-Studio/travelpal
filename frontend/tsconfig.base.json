@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    /* Base Options */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "ES2020",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "useUnknownInCatchVariables": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "jsx": "react-jsx",
+    "types": ["vite/client", "node"],
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@services/*": ["./src/services/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@types/*": ["./src/types/*"],
+      "@store/*": ["./src/store/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}
