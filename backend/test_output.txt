@@ -1,0 +1,50 @@
+/Users/tobymorning/travelpal/backend/venv/lib/python3.12/site-packages/langchain_community/utilities/__init__.py:8: LangChainDeprecationWarning: As of langchain-core 0.3.0, LangChain uses pydantic v2 internally. The langchain_core.pydantic_v1 module was a compatibility shim for pydantic v1, and should no longer be used. Please update the code to import from Pydantic directly.
+
+For example, replace imports like: `from langchain_core.pydantic_v1 import BaseModel`
+with: `from pydantic import BaseModel`
+or the v1 compatibility namespace if you are working in a code base that has not been fully upgraded to pydantic 2 yet. 	from pydantic.v1 import BaseModel
+
+  from langchain_community.utilities.requests import (
+/Users/tobymorning/travelpal/backend/venv/lib/python3.12/site-packages/pydantic/v1/validators.py:767: UserWarning: Mixing V1 and V2 models is not supported. `BaseMessage` is a V2 model.
+  warn(f'Mixing V1 and V2 models is not supported. `{type_.__name__}` is a V2 model.', UserWarning)
+Traceback (most recent call last):
+  File "/Users/tobymorning/travelpal/backend/run_test_directly.py", line 9, in <module>
+    from tests.unit.services.langchain.test_agent import (
+  File "/Users/tobymorning/travelpal/backend/tests/unit/services/langchain/test_agent.py", line 6, in <module>
+    from app.services.langchain.agent import TravelAgent, travel_agent
+  File "/Users/tobymorning/travelpal/backend/app/services/langchain/__init__.py", line 8, in <module>
+    from .agent import TravelAgent, travel_agent
+  File "/Users/tobymorning/travelpal/backend/app/services/langchain/agent.py", line 7, in <module>
+    from langchain.memory import ConversationBufferMemory
+  File "/Users/tobymorning/travelpal/backend/venv/lib/python3.12/site-packages/langchain/memory/__init__.py", line 29, in <module>
+    from langchain_community.chat_message_histories import (
+  File "/Users/tobymorning/travelpal/backend/venv/lib/python3.12/site-packages/langchain_community/chat_message_histories/__init__.py", line 20, in <module>
+    from langchain_community.chat_message_histories.in_memory import ChatMessageHistory
+  File "/Users/tobymorning/travelpal/backend/venv/lib/python3.12/site-packages/langchain_community/chat_message_histories/in_memory.py", line 8, in <module>
+    class ChatMessageHistory(BaseChatMessageHistory, BaseModel):
+  File "/Users/tobymorning/travelpal/backend/venv/lib/python3.12/site-packages/pydantic/v1/main.py", line 197, in __new__
+    fields[ann_name] = ModelField.infer(
+                       ^^^^^^^^^^^^^^^^^
+  File "/Users/tobymorning/travelpal/backend/venv/lib/python3.12/site-packages/pydantic/v1/fields.py", line 504, in infer
+    return cls(
+           ^^^^
+  File "/Users/tobymorning/travelpal/backend/venv/lib/python3.12/site-packages/pydantic/v1/fields.py", line 434, in __init__
+    self.prepare()
+  File "/Users/tobymorning/travelpal/backend/venv/lib/python3.12/site-packages/pydantic/v1/fields.py", line 550, in prepare
+    self._type_analysis()
+  File "/Users/tobymorning/travelpal/backend/venv/lib/python3.12/site-packages/pydantic/v1/fields.py", line 756, in _type_analysis
+    self.sub_fields = [self._create_sub_type(self.type_, '_' + self.name)]
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tobymorning/travelpal/backend/venv/lib/python3.12/site-packages/pydantic/v1/fields.py", line 806, in _create_sub_type
+    return self.__class__(
+           ^^^^^^^^^^^^^^^
+  File "/Users/tobymorning/travelpal/backend/venv/lib/python3.12/site-packages/pydantic/v1/fields.py", line 434, in __init__
+    self.prepare()
+  File "/Users/tobymorning/travelpal/backend/venv/lib/python3.12/site-packages/pydantic/v1/fields.py", line 555, in prepare
+    self.populate_validators()
+  File "/Users/tobymorning/travelpal/backend/venv/lib/python3.12/site-packages/pydantic/v1/fields.py", line 829, in populate_validators
+    *(get_validators() if get_validators else list(find_validators(self.type_, self.model_config))),
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tobymorning/travelpal/backend/venv/lib/python3.12/site-packages/pydantic/v1/validators.py", line 768, in find_validators
+    raise RuntimeError(f'no validator found for {type_}, see `arbitrary_types_allowed` in Config')
+RuntimeError: no validator found for <class 'langchain_core.messages.base.BaseMessage'>, see `arbitrary_types_allowed` in Config
