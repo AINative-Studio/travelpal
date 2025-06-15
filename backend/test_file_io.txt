@@ -1,0 +1,2 @@
+This is a test file to verify file I/O operations.
+If you can read this, the file operations are working correctly.
